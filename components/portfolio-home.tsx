@@ -14,11 +14,10 @@ const experiences = [
   {
     company: 'Trimble',
     role: 'Embedded Software & Test Automation Engineer',
-    dates: 'May 2026 — Present',
+    dates: 'May 2026 — Aug 2026',
     detail:
       'Building firmware flashing, device setup, and regression tooling for GNSS/INS systems. Automated production workflows to reduce programming time by about 20%.',
     tags: ['Python', 'C++', 'C#', 'QNX / Linux', 'CAN / UART'],
-    current: true,
   },
   {
     company: 'Trimble',
@@ -130,7 +129,7 @@ export function PortfolioHome() {
           </div>
           <aside className="hero-note" aria-label="Current roles">
             <span className="status-dot" />
-            <span>Trimble · Embedded systems</span>
+            <span>Embedded systems · Design verification</span>
             <span className="hero-note-separator">/</span>
             <span>Incoming SoC DFX / DV intern at AMD</span>
           </aside>
