@@ -29,11 +29,12 @@ function FeaturedProjectCard({ project, index }: { project: Project; index: numb
         <span className="project-category">{project.category}</span>
         <span className="project-index">0{index + 1}</span>
       </div>
-      <div className="project-emblem" aria-hidden="true">
-        <span className="emblem-orbit emblem-orbit-one" />
-        <span className="emblem-orbit emblem-orbit-two" />
-        <span className="emblem-center">{project.title.charAt(0)}</span>
-        <span className="emblem-pulse" />
+      <div className={`project-visual project-visual-${index + 1}`} aria-hidden="true">
+        {project.image ? (
+          <img src={project.image} alt="" loading={index < 3 ? 'eager' : 'lazy'} />
+        ) : (
+          <div className="project-visual-fallback"><span className="visual-grid" /><span className="visual-initial">{project.title.slice(0, 2).toUpperCase()}</span><span className="visual-label">{project.stack[0]}</span></div>
+        )}
       </div>
       <div className="featured-card-copy">
         <p className="project-highlight">{project.highlight}</p>
@@ -55,6 +56,7 @@ function ArchiveCard({ project }: { project: Project }) {
         <span className="project-category">{project.category}</span>
         {project.source && <span className="source-tag">{project.source}</span>}
       </div>
+      {project.image && <div className="archive-card-image"><img src={project.image} alt="" loading="lazy" /></div>}
       <h3>{project.title}</h3>
       <p className="project-description">{project.description}</p>
       <ul className="project-stack" aria-label="Technology stack">
@@ -88,7 +90,7 @@ export function ProjectBrowser() {
           <p className="eyebrow section-eyebrow"><span>Project archive</span><span className="eyebrow-divider" /> All the side quests, too</p>
           <h3>Every build,<br /><span>in one place.</span></h3>
         </div>
-        <p>From tiny C programs to full-stack systems and hardware prototypes. Search by project, tool, or discipline.</p>
+        <p>A curated mix of software, hardware, aviation, and design projects. Search by project, tool, or discipline.</p>
       </div>
       <div className="archive-toolbar">
         <div className="project-filters" role="group" aria-label="Filter projects by category">
