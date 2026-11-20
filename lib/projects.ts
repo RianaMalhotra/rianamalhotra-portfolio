@@ -4,7 +4,6 @@ export type ProjectCategory =
   | 'Software & Data'
   | 'Aviation & Tools'
   | 'Design & Community'
-  | 'Coursework & Experiments'
 
 export type Project = {
   title: string
@@ -16,11 +15,13 @@ export type Project = {
   highlight?: string
   featured?: boolean
   source?: 'GitHub' | 'LinkedIn'
+  image?: string
 }
 
 export const projects: Project[] = [
   {
     title: 'EmberWatch',
+    image: 'https://raw.githubusercontent.com/RianaMalhotra/EmberWatch/main/docs/homepage.webp',
     category: 'Software & Data',
     description: 'An AI-assisted wildfire detection and risk platform combining environmental signals, geospatial analysis, and an interactive risk dashboard.',
     stack: ['Python', 'Geospatial', 'Machine learning'],
@@ -40,6 +41,7 @@ export const projects: Project[] = [
   },
   {
     title: 'RVCore — RISC-V Processor',
+    image: 'https://raw.githubusercontent.com/RianaMalhotra/RVCore-RISC-V-Processor-Design-Verification/main/docs/images/rvcore-load-store-visualizer.png',
     category: 'Digital Design',
     description: 'A simulation-first 32-bit RISC-V SoC project with synthesizable RTL, Python reference models, automated regression, and early DFT exploration.',
     stack: ['SystemVerilog', 'Python', 'cocotb'],
@@ -67,6 +69,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Runway Crosswind Calculator',
+    image: 'https://raw.githubusercontent.com/RianaMalhotra/runway-crosswind-calculator/main/assets/airports/CYTZ.jpg',
     category: 'Aviation & Tools',
     description: 'A cockpit-inspired flight-training tool that visualizes headwind, tailwind, and crosswind components, with runway selection and METAR decoding.',
     stack: ['JavaScript', 'Weather APIs', 'Trigonometry'],
@@ -130,6 +133,7 @@ export const projects: Project[] = [
   },
   {
     title: 'RM VentureX',
+    image: 'https://raw.githubusercontent.com/RianaMalhotra/rmventurex/main/public/images/rmventurex-banner.png',
     category: 'Software & Data',
     description: 'An investment intelligence platform connecting financial data pipelines, structured research workflows, and interactive tools for equity analysis.',
     stack: ['TypeScript', 'Financial data', 'Web app'],
@@ -190,35 +194,6 @@ export const projects: Project[] = [
     live: 'https://rianamalhotra.github.io/Lily-Leap/',
   },
   {
-    title: 'ECE444 PRA6 — Test-Driven Development',
-    category: 'Coursework & Experiments',
-    description: 'Coursework exploring test-driven development and deployment of a web application.',
-    stack: ['Python', 'TDD', 'Deployment'],
-    github: 'https://github.com/RianaMalhotra/ece444-pra6',
-    live: 'https://ece444-pra6.onrender.com',
-  },
-  {
-    title: 'ECE444 PRA7 Starter',
-    category: 'Coursework & Experiments',
-    description: 'A clean course starter for Ruff, pre-commit hooks, and GitHub Actions workflows.',
-    stack: ['Python', 'Ruff', 'GitHub Actions'],
-    github: 'https://github.com/RianaMalhotra/ece444-pra7-starter',
-  },
-  {
-    title: 'ECE444 F2026 PRA3',
-    category: 'Coursework & Experiments',
-    description: 'A University of Toronto software engineering practical repository.',
-    stack: ['Python', 'Software engineering'],
-    github: 'https://github.com/RianaMalhotra/E444-F2026-PRA3',
-  },
-  {
-    title: 'ECE444 F2026 PRA1',
-    category: 'Coursework & Experiments',
-    description: 'Software engineering coursework focused on Git, collaboration, Agile workflows, testing, and CI/CD.',
-    stack: ['Python', 'Git', 'CI/CD'],
-    github: 'https://github.com/RianaMalhotra/RianaMalhotra-ECE444-F2026-PRA1',
-  },
-  {
     title: 'Portfolio — v1',
     category: 'Software & Data',
     description: 'An earlier personal portfolio introducing my work across software engineering, embedded systems, AI, and robotics.',
@@ -227,82 +202,13 @@ export const projects: Project[] = [
     live: 'https://rianamalhotra.github.io/',
   },
   {
-    title: 'Numerical Integration',
-    category: 'Coursework & Experiments',
-    description: 'A C program that approximates a definite integral with a rectangle-based numerical method.',
-    stack: ['C', 'Numerical methods'],
-    github: 'https://github.com/RianaMalhotra/Numerical-Integration',
-  },
-  {
-    title: 'Robot Shooting Angle',
-    category: 'Coursework & Experiments',
-    description: 'A compact C program that calculates the angle a robot needs to launch a ball toward a target.',
-    stack: ['C', 'Geometry'],
-    github: 'https://github.com/RianaMalhotra/Robot-Shooting',
-  },
-  {
     title: 'Arrival Time Calculator',
     category: 'Aviation & Tools',
     description: 'A C utility that adds trip duration to a departure time and reports the arrival time.',
     stack: ['C', 'Time calculation'],
     github: 'https://github.com/RianaMalhotra/Arrival-Time-Calculator',
   },
-  {
-    title: 'Law of Sines Calculator',
-    category: 'Coursework & Experiments',
-    description: 'A small C program for solving triangle side lengths and angles using the law of sines.',
-    stack: ['C', 'Trigonometry'],
-    github: 'https://github.com/RianaMalhotra/Law-of-sines',
-  },
-  {
-    title: 'Planet Properties',
-    category: 'Coursework & Experiments',
-    description: 'A C exercise for calculating a planet’s radius, mass, and velocity from user-provided inputs.',
-    stack: ['C', 'Physics'],
-    github: 'https://github.com/RianaMalhotra/Planets',
-  },
-  {
-    title: 'Thermostat Converter',
-    category: 'Coursework & Experiments',
-    description: 'A simple C utility for converting thermostat readings between Fahrenheit and Celsius.',
-    stack: ['C', 'Unit conversion'],
-    github: 'https://github.com/RianaMalhotra/Thermostat',
-  },
-  {
-    title: 'Palindrome Check',
-    category: 'Coursework & Experiments',
-    description: 'A concise C++ program that checks whether a string reads the same forward and backward.',
-    stack: ['C++', 'Algorithms'],
-    github: 'https://github.com/RianaMalhotra/Palindrome',
-  },
-  {
-    title: 'Tic-Tac-Toe',
-    category: 'Coursework & Experiments',
-    description: 'A classic two-player game built as an early C++ programming project.',
-    stack: ['C++', 'Game'],
-    github: 'https://github.com/RianaMalhotra/Tic-Tac-Toe',
-  },
-  {
-    title: 'Unit Convertor',
-    category: 'Coursework & Experiments',
-    description: 'A C utility for converting common mass, length, volume, and temperature units.',
-    stack: ['C', 'Unit conversion'],
-    github: 'https://github.com/RianaMalhotra/Unit-Convertor',
-  },
-  {
-    title: '8-Ball',
-    category: 'Coursework & Experiments',
-    description: 'A small command-line 8-ball style program built while learning C.',
-    stack: ['C', 'Interactive program'],
-    github: 'https://github.com/RianaMalhotra/8-Ball',
-  },
-  {
-    title: 'Quadratics',
-    category: 'Coursework & Experiments',
-    description: 'A C program for working with quadratic equations and their roots.',
-    stack: ['C', 'Math'],
-    github: 'https://github.com/RianaMalhotra/Quadratics',
-  },
+
 ]
 
 export const projectCategories = Array.from(
